@@ -1,0 +1,20 @@
+<div class="container" >
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-5" style="background-color: #96B6C5" >
+      <h1 style="color:white">Tasks list </h1>
+      <ul>
+        <% @tasks.each do |task| %>
+          <li><input type="checkbox">
+        <%= link_to task.title, task_path(task) %>
+        <%= link_to "Delete", task_path(task),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
+        <% end %>
+      </ul>
+      <p>
+      <button class="btn btn-light mt-2">
+        <%= link_to "Add new task",  new_task_path(@task)%>
+      </button>
+      </p>
+    </div>
+  </div>
+</div>

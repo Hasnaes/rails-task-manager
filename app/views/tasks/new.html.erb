@@ -1,0 +1,17 @@
+<div class="container" >
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-5" style="background-color: #96B6C5" >
+    <h1 style="color:white">New Task</h1>
+      <%= form_with model: @task do |f| %>
+        <label style="color:white"><%= f.label :title %></label>
+        <input class="form-control"<%= f.text_field :title %>>
+        <label style="color:white"><%= f.label :details %></label>
+        <input class="form-control"<%= f.text_field :details %>>
+        <%# <%= f.label :rating %>
+        <%# <%= f.number_field :rating %>
+        <button class="btn btn-light mt-2">Create Task<% f.submit%></button>
+      <% end %>
+      <%= link_to "Back to list", tasks_path(@task)%>
+    </div>
+  </div>
+</div>
